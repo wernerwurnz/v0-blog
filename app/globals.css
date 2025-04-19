@@ -183,11 +183,6 @@
 }
 
 /* Service card styles */
-.service-card {\
-  transition: all 0,0,0.7), rgba(0,0,0,0.7));
-}
-
-/* Service card styles */
 .service-card {
   transition: all 0.3s ease;
 }

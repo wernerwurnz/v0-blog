@@ -2,59 +2,43 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Mail, Phone, MapPin, Instagram, Twitter, Facebook, Linkedin } from "lucide-react"
+import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react"
 
 export function SiteFooter() {
   return (
-    <footer className="bg-evenizer-purple text-white">
+    <footer className="bg-gray-50 border-t">
       <div className="container py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: Logo and About */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.svg" alt="#Ahem" width={40} height={40} />
-              <span className="font-bold text-xl">#Ahem</span>
+              <span className="font-bold text-xl text-evenizer-purple">#Ahem</span>
             </Link>
-            <p className="text-white/80 max-w-xs">
+            <p className="text-muted-foreground">
               Your go-to resource for planning perfect events from the comfort of your home.
             </p>
-            <div className="flex space-x-4">
-              <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-9 w-9 rounded-full text-white hover:text-white hover:bg-white/20"
-                >
-                  <Instagram className="h-5 w-5" />
-                  <span className="sr-only">Instagram</span>
-                </Button>
-              </Link>
-              <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-9 w-9 rounded-full text-white hover:text-white hover:bg-white/20"
-                >
-                  <Twitter className="h-5 w-5" />
-                  <span className="sr-only">Twitter</span>
-                </Button>
-              </Link>
+            <div className="flex gap-4">
               <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-9 w-9 rounded-full text-white hover:text-white hover:bg-white/20"
-                >
+                <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full">
                   <Facebook className="h-5 w-5" />
                   <span className="sr-only">Facebook</span>
                 </Button>
               </Link>
+              <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full">
+                  <Twitter className="h-5 w-5" />
+                  <span className="sr-only">Twitter</span>
+                </Button>
+              </Link>
+              <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full">
+                  <Instagram className="h-5 w-5" />
+                  <span className="sr-only">Instagram</span>
+                </Button>
+              </Link>
               <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-9 w-9 rounded-full text-white hover:text-white hover:bg-white/20"
-                >
+                <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full">
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
                 </Button>
@@ -63,31 +47,36 @@ export function SiteFooter() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+          <div className="space-y-4">
+            <h3 className="font-bold text-lg">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-white/80 hover:text-white transition-colors">
+                <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-white/80 hover:text-white transition-colors">
+                <Link href="/services" className="text-muted-foreground hover:text-foreground transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-white/80 hover:text-white transition-colors">
+                <Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/resources" className="text-white/80 hover:text-white transition-colors">
+                <Link href="/resources" className="text-muted-foreground hover:text-foreground transition-colors">
                   Resources
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-white/80 hover:text-white transition-colors">
+                <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
                   Contact
                 </Link>
               </li>
@@ -95,55 +84,56 @@ export function SiteFooter() {
           </div>
 
           {/* Column 3: Contact Info */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
+          <div className="space-y-4">
+            <h3 className="font-bold text-lg">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-white/80 mt-0.5" />
-                <span className="text-white/80">
-                  123 Event Street, Suite 456
-                  <br />
-                  New York, NY 10001
-                </span>
+                <MapPin className="h-5 w-5 text-evenizer-purple shrink-0 mt-0.5" />
+                <span className="text-muted-foreground">Jl. Sunset Road No.815, Kuta, Bali, Indonesia</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-white/80" />
-                <a href="tel:+1234567890" className="text-white/80 hover:text-white transition-colors">
-                  (123) 456-7890
-                </a>
+                <Phone className="h-5 w-5 text-evenizer-purple shrink-0" />
+                <span className="text-muted-foreground">(+62) 81 2345 1234</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-white/80" />
-                <a href="mailto:info@ahemevents.com" className="text-white/80 hover:text-white transition-colors">
-                  info@ahemevents.com
-                </a>
+                <Mail className="h-5 w-5 text-evenizer-purple shrink-0" />
+                <span className="text-muted-foreground">info@ahemevents.com</span>
               </li>
             </ul>
           </div>
 
           {/* Column 4: Newsletter */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Newsletter</h3>
-            <p className="text-white/80 mb-4">
-              Subscribe to our newsletter for the latest event planning tips and trends.
+          <div className="space-y-4">
+            <h3 className="font-bold text-lg">Newsletter</h3>
+            <p className="text-muted-foreground">
+              Subscribe to our newsletter for the latest updates and event planning tips.
             </p>
             <div className="flex gap-2">
-              <Input
-                type="email"
-                placeholder="Your email"
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus-visible:ring-white"
-              />
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-evenizer-purple">
-                Subscribe
-              </Button>
+              <Input placeholder="Your email" type="email" className="max-w-[220px]" />
+              <Button>Subscribe</Button>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="mt-12 pt-6 border-t border-white/20 text-center text-white/60 text-sm">
-          <p>© {new Date().getFullYear()} #Ahem Events. All rights reserved.</p>
+      {/* Copyright */}
+      <div className="border-t py-6">
+        <div className="container flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} #Ahem Events. All rights reserved.
+          </p>
+          <div className="flex gap-4 text-sm">
+            <Link href="/privacy-policy" className="text-muted-foreground hover:text-foreground transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-of-service" className="text-muted-foreground hover:text-foreground transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
   )
 }
+
+export default SiteFooter

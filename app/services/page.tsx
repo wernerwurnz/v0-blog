@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { SiteLayout } from "@/components/layout/site-layout"
-import { HeroSection } from "@/components/ui/hero-section"
 import { Section } from "@/components/ui/section"
 import { SectionHeader } from "@/components/ui/section-header"
 import { Button } from "@/components/ui/button"
@@ -50,12 +49,12 @@ export default function ServicesPage() {
 
   return (
     <SiteLayout>
-      <HeroSection
-        backgroundImage="/celebratory-gathering.png"
-        title="Our Services"
-        description="Comprehensive event planning services to make your special occasion unforgettable"
-        size="md"
-      />
+      <div className="container py-12">
+        <h1 className="text-3xl font-bold mb-6">Our Services</h1>
+        <p className="text-muted-foreground">
+          Comprehensive event planning services to make your special occasion unforgettable.
+        </p>
+      </div>
 
       {/* Services Section */}
       <Section className="py-20">
